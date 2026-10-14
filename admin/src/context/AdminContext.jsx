@@ -11,7 +11,7 @@ const AdminContextProvider = (props) => {
     const [appointments, setAppointments] = useState([]);
     const [loading, setLoading] = useState(false);
     const [dashData, setDashData] = useState({});
-    const backenedUrl = import.meta.env.VITE_BACKENED_URL;
+    const backenedUrl = (import.meta.env.VITE_BACKENED_URL || "").replace(/\/+$/, "");
 
     useEffect(() => {
         if (aToken) {

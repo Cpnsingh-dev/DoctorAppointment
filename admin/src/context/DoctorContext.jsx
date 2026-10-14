@@ -8,7 +8,7 @@ export const DoctorContext = createContext()
 
 const DoctorContextProvider = (props) => {
 
-    const backenedUrl = import.meta.env.VITE_BACKENED_URL;
+    const backenedUrl = (import.meta.env.VITE_BACKENED_URL || "").replace(/\/+$/, "");
     const [dToken, setDToken] = useState(localStorage.getItem('dToken') ? localStorage.getItem('dToken') : "");
 
     const [doctorAppoinments, setDoctorAppoinments] = useState([]);
